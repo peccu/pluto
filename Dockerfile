@@ -21,6 +21,7 @@ RUN ./configure && make all && make install
 WORKDIR /root
 RUN curl -L https://github.com/ocaml/opam/archive/1.2.2.tar.gz |tar -xz
 WORKDIR opam-1.2.2
+COPY ./extlib-Makefile src_ext/Makefile
 RUN ./configure && make lib-ext && make && make install
 
 # Tools
